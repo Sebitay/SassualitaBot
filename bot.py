@@ -118,10 +118,10 @@ def main():
     job_queue = app.job_queue
     tz_chile = pytz.timezone("America/Santiago")
     hora_encuesta = datetime.time(hour=12, minute=0, tzinfo=tz_chile)
+    hora_resultados = datetime.time(hour=18, minute=0, tzinfo=tz_chile)
 
-    job_queue.run_once(enviar_encuesta, when=datetime.timedelta(seconds=3))
-    job_queue.run_once(enviar_resultados_populares, when=datetime.timedelta(seconds=30))
-    job_queue.run_daily(enviar_encuesta, time=hora_encuesta, days=(2,))  # martes
+    job_queue.run_daily(enviar_encuesta, time=hora_encuesta, days=(2,))
+    job_queue.run_daily(enviar_resultados_populares, time=hora_resultados, days=(2,3,4,5))
 
     print("✅ Bot corriendo y escuchando votos en tiempo real...")
     app.run_polling()
