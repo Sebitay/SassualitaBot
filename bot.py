@@ -12,9 +12,9 @@ load_dotenv()
 
 # === CONFIG ===
 TOKEN = os.getenv("TOKEN")
-CHAT_IDs=[-4934344340, -4778677223]
+CHAT_IDs=[-4949002055, -4946652588]
 ID_RESULTADOS=6196411266
-CHAT_TYPES={-4934344340: "masc", -4778677223: "mixto"}
+CHAT_TYPES={-4949002055: "masc", -4946652588: "mixto"}
 
 
 # chat_id -> poll_id -> opcion -> {"votos": int, "usuarios": [user_ids]}
